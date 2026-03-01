@@ -22,7 +22,8 @@ import {
   Navigation,
   ExternalLink,
   Mic2,
-  XCircle
+  XCircle,
+  Bus
 } from 'lucide-react';
 import { motion } from 'motion/react';
 
@@ -145,148 +146,24 @@ export default function App() {
           </div>
           
           <h1 className="text-2xl md:text-3xl font-medium text-slate-600 tracking-tight">
-            Instructions to Selected Participants
+            Location & Route Details
           </h1>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-            Welcome to MKCE Karur. Please read the guidelines for the 30-hour hackathon carefully.
+            MKCE Karur
           </p>
         </motion.header>
 
-        {/* Critical Alert */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="bg-violet-50 border-l-4 border-violet-500 p-6 rounded-r-xl shadow-sm flex gap-4 items-start"
-        >
-          <AlertTriangle className="text-violet-600 shrink-0 mt-0.5" size={24} />
-          <div>
-            <h3 className="font-bold text-violet-900 text-lg mb-1">Important Notice</h3>
-            <p className="text-violet-800">
-              All registered teams must report at the venue on time. Registration confirmation is subject to <strong>physical verification</strong> at the desk.
-            </p>
-          </div>
-        </motion.div>
 
-        {/* Registration & ID */}
 
-          <Section title="Registration & ID" icon={IdCard}>
-            <div className="space-y-4">
-              <p>
-                Verification is mandatory for entry. Please ensure you have the following ready at the registration desk:
-              </p>
-              <ul className="bg-white border border-slate-100 rounded-xl divide-y divide-slate-100">
-                <li className="p-4 flex gap-3 items-center">
-                  <CheckCircle2 className="text-green-500 shrink-0" size={20} />
-                  <span className="font-medium text-slate-900">Original College ID Card</span>
-                </li>
-                <li className="p-4 flex gap-3 items-center">
-                  <CheckCircle2 className="text-green-500 shrink-0" size={20} />
-                  <span className="font-medium text-slate-900">Printed Project Abstract</span>
-                </li>
-              </ul>
-              <p className="text-sm text-slate-500 italic mt-2">
-                * All team members must be physically present for verification.
-              </p>
-            </div>
-          </Section>
 
-        {/* Project Abstract - Mandatory */}
-        <Section title="Project Abstract (Mandatory)" icon={FileText} className="border-l-4 border-l-violet-500">
-          <div className="space-y-4">
-            <p className="font-medium text-slate-900">
-              Each team must bring one printed (hard) copy of their Project Abstract. This will be verified during registration.
-            </p>
-            <div className="bg-slate-50 p-5 rounded-xl border border-slate-100">
-              <p className="text-sm text-slate-500 uppercase tracking-wider font-semibold mb-3">The abstract must clearly mention:</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                <div className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-slate-400"/>Project Title</div>
-                <div className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-slate-400"/>Team Members’ Names</div>
-                <div className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-slate-400"/>College Name</div>
-                <div className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-slate-400"/>Problem Statement</div>
-                <div className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-slate-400"/>Proposed Solution</div>
-              </div>
-            </div>
-            <p className="text-rose-600 text-sm flex items-center gap-2">
-              <AlertTriangle size={16} />
-              Teams failing to submit the hard copy may not be permitted for evaluation.
-            </p>
-          </div>
-        </Section>
 
-        {/* Mandatory Items */}
-        <Section title="Items to be Brought" icon={CheckSquare}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
-            <ul className="space-y-3">
-              <ListItem>Personal laptop with charger</ListItem>
-              <ListItem>Extension board / multi-plug (compulsory)</ListItem>
-              <ListItem>All necessary electronic components / hardware</ListItem>
-              <ListItem>One printed copy of the Project Abstract</ListItem>
-              <ListItem>Soft copy of project files (backup)</ListItem>
-              <ListItem>College ID card (original)</ListItem>
-            </ul>
-            <ul className="space-y-3 mt-3 md:mt-0">
-              <ListItem>Notebook and pen</ListItem>
-              <ListItem>Mobile phone with charger</ListItem>
-              <ListItem>Extra set of clothes for 2 days</ListItem>
-              <ListItem>Personal medications (if applicable)</ListItem>
-              <ListItem>Water bottle (recommended)</ListItem>
-            </ul>
-          </div>
-        </Section>
 
-        {/* Volunteer Support */}
-        <Section title="Team Support & Volunteers" icon={Users}>
-          <div className="flex flex-col md:flex-row gap-6 items-center">
-            <div className="flex-1 space-y-4">
-              <p>One volunteer will be allocated to each team to provide guidance and support.</p>
-              <ul className="space-y-2">
-                <li className="flex gap-2 items-start text-sm text-slate-700">
-                  <CheckCircle2 size={16} className="mt-0.5 text-violet-500 shrink-0"/>
-                  <span>Guide the team to the food venue as per schedule</span>
-                </li>
-                <li className="flex gap-2 items-start text-sm text-slate-700">
-                  <CheckCircle2 size={16} className="mt-0.5 text-violet-500 shrink-0"/>
-                  <span>Assist in locating the allocated hostel room</span>
-                </li>
-                <li className="flex gap-2 items-start text-sm text-slate-700">
-                  <CheckCircle2 size={16} className="mt-0.5 text-violet-500 shrink-0"/>
-                  <span>Provide basic coordination support</span>
-                </li>
-              </ul>
-              <p className="text-sm text-slate-500 bg-slate-50 p-3 rounded-lg border border-slate-100">
-                Teams are advised to coordinate with their assigned volunteer for any venue-related assistance.
-              </p>
-            </div>
-          </div>
-        </Section>
 
-        {/* Cultural Program */}
-        <Section title="Cultural Program" icon={Music} className="bg-gradient-to-r from-violet-50 to-white border-violet-100">
-          <div className="space-y-4">
-            <div className="flex items-center justify-between flex-wrap gap-4">
-              <div>
-                <h3 className="font-bold text-violet-900 text-lg">Refreshing Culturals</h3>
-                <p className="text-violet-700">Organized by the MKCE Cultural Club</p>
-              </div>
-              <div className="px-4 py-2 bg-white rounded-lg shadow-sm border border-violet-100 text-violet-800 font-mono text-sm">
-                26.02.2026 • 6:00 PM - 8:30 PM
-              </div>
-            </div>
-            
-            <div className="bg-white/60 p-4 rounded-xl border border-violet-100">
-              <p className="font-medium text-violet-900 mb-2 flex items-center gap-2">
-                <Mic2 size={18} /> Participant Involvement
-              </p>
-              <p className="text-slate-600 text-sm mb-3">
-                Interested participants may join the club for Singing, Dancing, Instrumental performances, etc.
-              </p>
-              <div className="flex gap-2 items-start text-xs text-violet-800 bg-violet-50 p-2 rounded">
-                <AlertTriangle size={14} className="mt-0.5 shrink-0"/>
-                <span>Must confirm participation with the organizing team/volunteer <strong>before</strong> the start of the event.</span>
-              </div>
-            </div>
-          </div>
-        </Section>
+
+
+
+
+
 
         {/* Route Details */}
         <Section title="Route Details" icon={Navigation}>
@@ -335,37 +212,28 @@ export default function App() {
           </div>
         </Section>
 
-        {/* Guidelines & Dress Code */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Section title="Participation Guidelines" icon={ClipboardList}>
-            <ul className="space-y-3">
-              <ListItem>Teams must remain present throughout the 30-hour duration.</ListItem>
-              <ListItem>Abstract verification will be done during registration.</ListItem>
-              <ListItem>Judges’ decisions will be final and binding.</ListItem>
-              <ListItem>Any misconduct or violation of event rules may lead to disqualification.</ListItem>
-              <ListItem>Participants are responsible for the safety of their personal belongings.</ListItem>
-            </ul>
-          </Section>
-
-          <Section title="Dress Code" icon={Shirt}>
-            <p>
-              Participants may wear attire of their choice. <span className="font-medium text-slate-900">Comfortable clothing is recommended</span> considering the 30-hour duration of the event.
-            </p>
-          </Section>
-        </div>
-
-        {/* Certification */}
-        <Section title="Certification" icon={Award} className="bg-gradient-to-br from-violet-50 to-white border-violet-100">
-          <div className="flex gap-4 items-start">
-            <div className="flex-1">
-              <p className="text-violet-900 font-medium text-lg mb-2">
-                Eligibility for Certificates
-              </p>
-              <p className="text-violet-800/80">
-                Certificates will be issued <strong>only</strong> to participants who are physically present throughout the hackathon and valedictory session.
-              </p>
+        {/* Bus Details */}
+        <Section title="Bus Details" icon={Bus}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="flex items-start gap-3 p-4 bg-white border border-slate-200 rounded-xl shadow-sm hover:border-violet-200 transition-colors">
+              <div className="p-2 bg-violet-100 text-violet-600 rounded-lg shrink-0">
+                <Bus size={20} />
+              </div>
+              <div>
+                <p className="font-medium text-slate-900">Bus No. 1</p>
+                <p className="text-sm text-slate-600">Board from Karur Old Bus Stand</p>
+              </div>
             </div>
-            <Award className="text-violet-300 hidden sm:block" size={64} strokeWidth={1} />
+            
+            <div className="flex items-start gap-3 p-4 bg-white border border-slate-200 rounded-xl shadow-sm hover:border-violet-200 transition-colors">
+              <div className="p-2 bg-violet-100 text-violet-600 rounded-lg shrink-0">
+                <Bus size={20} />
+              </div>
+              <div>
+                <p className="font-medium text-slate-900">Salem / Velur Bound Buses</p>
+                <p className="text-sm text-slate-600">Board any bus towards Salem or Velur from Karur New Bus Stand</p>
+              </div>
+            </div>
           </div>
         </Section>
 
